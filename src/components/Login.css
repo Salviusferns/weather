@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+*{
+  font-family:"Patrick Hand";
+}
+.main{
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://img.freepik.com/free-vector/gradient-beautiful-landscape_23-2149122376.jpg);
+  height: 110vh;
+  background-size: cover;
+  justify-content: center;
+
+}
+.container {
+  display: grid; 
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 0px; 
+  width:300px;
+  grid-template-areas: 
+    "image"
+    "login"; 
+    margin-bottom: 50px;
+    margin-left: 300px;
+}
+.image { 
+  grid-area: image;
+}
+.image { 
+  display: grid;
+  padding-right: 100px;
+  background-image: url(https://img.freepik.com/free-vector/gradient-beautiful-landscape_23-2149122376.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 25px 25px 0 0;
+  justify-content: center;
+ }
+ .login {
+  grid-area: login;}
+
+.login {
+  display: grid;
+  justify-content: center;
+  padding-right: 100px;
+  width: 200px;
+  height: 200px;
+  background-color: aliceblue;
+  border-radius: 0 0 25px 25px;
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+ }
+.login input{
+  border-radius: 15px;
+  height: 20px;
+  width: 150px;
+  left: 200px;
+  gap: 20px;
+  border: 3px solid #B5409B
+}
+.login button{
+  background-color: blueviolet;
+  color: white;
+  border-radius: 15px;
+  height: 20px;
+  width: 80px;
+  border: white;
+}
+.main img{
+    height: 50px;
+    width: 50px;
+}
