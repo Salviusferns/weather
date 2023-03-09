@@ -1,104 +1,45 @@
-.container {
-    display: grid; 
-    grid-template-columns: 1fr 1.1fr 0.9fr 1fr; 
-    grid-template-rows: 0.5fr 1.6fr 0.5fr 1.4fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "header header header header"
-      "leftbar Tempreture meter time"
-      "leftbar . . uv"
-      "leftbar dashboard advice forecast"; 
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  margin-right: 300px;
+
+}
+.Outerlayout{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: blueviolet;
+  height: 100vh;
+
+}
+
+.leftbar{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+}
+
+button{
+  height: 30px;
+}
+
+input{
+  height: 30px;
+}
+.parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  padding-top: 30px;
+  background-color: aliceblue;
+  height: 300px;
+  width: 250px;
   }
-  .header {
-    display: grid; 
-    grid-template-columns: 0.7fr 0.8fr 1.1fr 1.1fr 0.8fr 1.5fr; 
-    grid-template-rows: 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      ". . . . . ."; 
-    grid-area: header; 
-  }
-  .leftbar {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "."
-      "."
-      "."
-      "."; 
-    grid-area: leftbar; 
-  }
-  .Tempreture {
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      ". . ."
-      "temp vis hum"
-      ". . ."; 
-    grid-area: Tempreture; 
-  }
-  .temp { grid-area: temp; }
-  .vis { grid-area: vis; }
-  .hum { grid-area: hum; }
-  .meter {
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      ". . ."
-      ". . ."
-      "slider slider slider"
-      ". . ."; 
-    grid-area: meter; 
-  }
-  .slider { grid-area: slider; }
-  .dashboard {
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1.1fr 0.9fr 1fr; 
-    gap: 6px 0px; 
-    grid-template-areas: 
-      ". . ."
-      "air-quality air-quality air-quality"
-      "air-quality air-quality air-quality"; 
-    grid-area: dashboard; 
-  }
-  .air-quality {
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      ". . ."
-      ". . ."; 
-    grid-area: air-quality; 
-  }
-  .advice {
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      ". . ."
-      ". . ."
-      ". . ."; 
-    grid-area: advice; 
-  }
-  .forecast {
-    display: grid; 
-    grid-template-columns: 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 8px 0px; 
-    grid-template-areas: 
-      "."
-      "."; 
-    grid-area: forecast; 
-  }
-  .uv { grid-area: uv; }
-  .time { grid-area: time; }
-  
+
+.rightbar{
+  justify-content: flex-start;
+}

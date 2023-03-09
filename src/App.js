@@ -4,14 +4,10 @@ import Feed from './components/Feed';
 
 function App() {
   return (
-    <div className='app'>
-      <div>
-      <Login/>
+    <div>
+    <Login/>
+      <Feed/>
       </div>
-      <div>
-
-      </div>
-    </div>
   );
 }
 

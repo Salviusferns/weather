@@ -1,23 +1,31 @@
+import "./Feed.css"
 export default function Feed(){
-    return(
-        <div class="container">
-  <div class="header"></div>
-  <div class="leftbar"></div>
-  <div class="Tempreture">
-    <div class="temp"></div>
-    <div class="vis"></div>
-    <div class="hum"></div>
-  </div>
-  <div class="meter">
-    <div class="slider"></div>
-  </div>
-  <div class="dashboard">
-    <div class="air-quality"></div>
-  </div>
-  <div class="advice"></div>
-  <div class="forecast"></div>
-  <div class="uv"></div>
-  <div class="time"></div>
-</div>
-    )
+  return(
+    <div className="app">
+          <div className="Outerlayout">
+            <div className="leftbar">
+                  <div>Home</div>
+                  <div>personal Health</div>
+                  <div>Dashboard</div>
+            </div>
+              <div className="header">
+                <div>logo</div>
+                <div>Pfp</div>
+                <div>name</div>
+                <input type="text" placeholder="search"/>
+                <button>logo</button>
+                <div class="parent">
+                  <section>temperature</section>
+                  <section> slider</section>
+                  <section>air quality</section>
+                  <section> advice</section>
+                </div>
+              </div>
+
+              <div className="rightbar">
+                <div>moon</div>
+              </div>
+          </div>
+    </div>
+  )
 }
