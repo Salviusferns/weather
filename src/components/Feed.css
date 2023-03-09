@@ -1,0 +1,104 @@
+.container {
+    display: grid; 
+    grid-template-columns: 1fr 1.1fr 0.9fr 1fr; 
+    grid-template-rows: 0.5fr 1.6fr 0.5fr 1.4fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "header header header header"
+      "leftbar Tempreture meter time"
+      "leftbar . . uv"
+      "leftbar dashboard advice forecast"; 
+  }
+  .header {
+    display: grid; 
+    grid-template-columns: 0.7fr 0.8fr 1.1fr 1.1fr 0.8fr 1.5fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . . . . ."; 
+    grid-area: header; 
+  }
+  .leftbar {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "."
+      "."
+      "."
+      "."; 
+    grid-area: leftbar; 
+  }
+  .Tempreture {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . ."
+      "temp vis hum"
+      ". . ."; 
+    grid-area: Tempreture; 
+  }
+  .temp { grid-area: temp; }
+  .vis { grid-area: vis; }
+  .hum { grid-area: hum; }
+  .meter {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . ."
+      ". . ."
+      "slider slider slider"
+      ". . ."; 
+    grid-area: meter; 
+  }
+  .slider { grid-area: slider; }
+  .dashboard {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1.1fr 0.9fr 1fr; 
+    gap: 6px 0px; 
+    grid-template-areas: 
+      ". . ."
+      "air-quality air-quality air-quality"
+      "air-quality air-quality air-quality"; 
+    grid-area: dashboard; 
+  }
+  .air-quality {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . ."
+      ". . ."; 
+    grid-area: air-quality; 
+  }
+  .advice {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . ."
+      ". . ."
+      ". . ."; 
+    grid-area: advice; 
+  }
+  .forecast {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 8px 0px; 
+    grid-template-areas: 
+      "."
+      "."; 
+    grid-area: forecast; 
+  }
+  .uv { grid-area: uv; }
+  .time { grid-area: time; }
+  
