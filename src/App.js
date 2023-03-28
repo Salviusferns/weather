@@ -1,12 +1,14 @@
 import Login from './components/Login';
 import './App.css';
-import Feed from './components/Feed';
+import Home from './components/Home';
+import Personal from './components/Personal';
 
 function App() {
   return (
     <div>
-    <Login/>
-      <Feed/>
+      <Login/>
+      <Home/>
+      <Personal/>
       </div>
   );
 }
