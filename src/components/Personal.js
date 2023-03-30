@@ -1,3 +1,4 @@
+import React from "react"
 import "./Personal.css"
 import axios from "axios"
 import { useState } from "react"

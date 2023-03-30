@@ -1,9 +1,12 @@
+import React from "react"
 import axios from "axios"
+import Clockm from "./Clockm"
 import { useState } from "react"
 import "./Home.css"
 export default function Home(){
   const [cityData,setCityData]=useState(null)
   const [weatherData,setWeatherData]=useState(null)
+  const [forecasData,setForecastData]=useState(null)
   const [query,setQuery]=useState("")
   const handlesearch1 =()=>{
     axios.get(`http://localhost:4000/search?q=${query}`)
@@ -20,6 +23,16 @@ export default function Home(){
     .then(
       (response) => {
         setWeatherData(response.data)
+      }
+    )
+    .catch((error) =>{
+      console.log(error)
+    }
+    )
+    axios.get(`http://localhost:4000/forecast?q=${query}`)
+    .then(
+      (response) => {
+        setForecastData(response.data)
       }
     )
     .catch((error) =>{
@@ -60,10 +73,10 @@ export default function Home(){
                         <article>
                       {weatherData && (
                             <div>
-                            <h2>{weatherData.main.temp}</h2>
-                            <h2>{weatherData.main.humidity}</h2>
-                            <h2>{weatherData.main.pressure}</h2>
-                            <h2>{weatherData.visibility}</h2>
+                            <p1>{weatherData.main.temp}</p1>
+                            <p1>{weatherData.main.humidity}</p1>
+                            <p1>{weatherData.main.pressure}</p1>
+                            <p1>{weatherData.visibility}</p1>
                             </div>
                         )}
                         </article>
@@ -72,14 +85,21 @@ export default function Home(){
                         <article></article>
                       </section2>
                       <section3>air quality
-                        <article></article>
+                        <article>
+                        {cityData && (
+                            <div>
+                      <p>{cityData.data.current_measurement.ts}</p>
+                      <p>p2:{cityData.data.current_measurement.p2.aqius}</p>
+                      </div>
+                        )}
+                        </article>
                       </section3>
                       <section4> advice
                         <article>
                       {cityData && (
                             <div>
-                            <h2>{cityData.data.recommendations.pollution.exercice.text}</h2>
-                            <h2>{cityData.data.recommendations.pollution.windows.text}</h2>
+                            <p>{cityData.data.recommendations.pollution.exercice.text}</p>
+                            <p>{cityData.data.recommendations.pollution.windows.text}</p>
                             </div>
                         )}
                         </article>
@@ -93,11 +113,23 @@ export default function Home(){
                   <section>
                     <div className="rightbar-flex">
                       <div>moon</div>
-                      <box>clock</box>
-                      <box2>20 uvi</box2>
+                      <box>
+                        <Clockm/>
+                      </box>
                       <div>weather prediction</div>
-                      <box1>cloudy</box1>
-                      <box1>rainy</box1>
+                      <box1>{forecasData && (
+                            <div>
+                            <p1>{forecasData.list[0].weather[0].description}</p1>
+                            </div>
+                        )
+                        }
+                        </box1>
+                       <box1>{forecasData && (
+                            <div>
+                             <p1>{forecasData.list[1].weather[0].description}</p1>
+                            </div>
+                        )
+                        }</box1>
                       <button></button>
                     </div>
                   </section>
